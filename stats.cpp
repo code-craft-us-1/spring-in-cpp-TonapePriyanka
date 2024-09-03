@@ -3,7 +3,7 @@
 #include<numeric>
 #include<algorithm>
 
-Stats Statistics::ComputeStatistics(const std::vector<float>& i) {
+Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& i) {
     //Implement statistics here
     Stats stats;
     if(i.size()==0)
@@ -14,9 +14,9 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& i) {
     }
     else
     {
-        stats.average = ((float)std::accumulate(i.begin, i.end, 0.0f))/i.size();
-        stats.min =* std::min_element(i.begin, i.end);
-        stats.max =* std::max_element(i.begin, i.end);
+        stats.average = ((float)std::accumulate(i.begin(), i.end(), 0.0f))/i.size();
+        stats.min =* std::min_element(i.begin(), i.end());
+        stats.max =* std::max_element(i.begin(), i.end());
     }
     return stats;
 }
